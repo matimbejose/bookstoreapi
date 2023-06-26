@@ -15,6 +15,20 @@ class AuthorsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    /**
+     * @OA\Get(
+     * tags={"Crud author"},
+     * summary="Get all the authors in the database",
+     * description="This endpoints return a  all authors Registed",
+     *     path="/api/v1/authors",
+     *     @OA\Response(
+     *         response="200",
+     *         description="The data"
+     *     )
+     * )
+     */
+
     public function index()
     {
         return AuthorsResource::collection(Author::all());
@@ -36,6 +50,19 @@ class AuthorsController extends Controller
      * @param  \App\Http\Requests\StoreAuthorRequest  $request
      * @return \Illuminate\Http\Response
      */
+
+    /**
+     * @OA\Get(
+     * tags={"Crud author"},
+     * summary="Get the data of a specific author",
+     * description="This endpoints return data of the author",
+     *     path="/api/v1/authors/{name}",
+     *     @OA\Response(
+     *         response="200",
+     *         description="The data"
+     *     )
+     * )
+     */
     public function store(AuthorsRequest $request)
     {
         // $fake = \Faker\Factory::create(1);
@@ -54,6 +81,20 @@ class AuthorsController extends Controller
      * @param  \App\Models\Author  $author
      * @return \Illuminate\Http\Response
      */
+    
+    /**
+     * @OA\Get(
+     * tags={"Crud author"},
+     * summary="Get the data of a specific author",
+     * description="This endpoints return data of the author",
+     *     path="/api/v1/authors/{id}",
+     *     @OA\Response(
+     *         response="200",
+     *         description="The data"
+     *     )
+     * )
+     */
+
     public function show(Author $author)
     {
 

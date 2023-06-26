@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthorsController;
 use App\Http\Controllers\BooksController;
+use App\Http\Controllers\UsersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,10 @@ use App\Http\Controllers\BooksController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
+
+Route::post('/v1/login', [UsersController::class,'login']);
+Route::post('/v1/register', [UsersController::class,'register']);
 
 
 Route::middleware('auth:api')->prefix('v1')->group(function() {

@@ -1,0 +1,84 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "BOOSTORE API DOCUMENTION",
+        "contact": {
+            "email": "matimbejose@gmail.com"
+        },
+        "version": "1.0"
+    },
+    "paths": {
+        "/api/v1/authors": {
+            "get": {
+                "tags": [
+                    "Crud author"
+                ],
+                "summary": "Get all the authors in the database",
+                "description": "This endpoints return a  all authors Registed",
+                "operationId": "0de2b82410c4f111fee4cef39a591326",
+                "responses": {
+                    "200": {
+                        "description": "The data"
+                    }
+                }
+            }
+        },
+        "/api/v1/authors/{name}": {
+            "get": {
+                "tags": [
+                    "Crud author"
+                ],
+                "summary": "Get the data of a specific author",
+                "description": "This endpoints return data of the author",
+                "operationId": "e62d36fa566aaec65d2fe30d3065d733",
+                "responses": {
+                    "200": {
+                        "description": "The data"
+                    }
+                }
+            }
+        },
+        "/api/v1/authors/{id}": {
+            "get": {
+                "tags": [
+                    "Crud author"
+                ],
+                "summary": "Get the data of a specific author",
+                "description": "This endpoints return data of the author",
+                "operationId": "06bc2f56fd9b04ffc872cb6551b7da7f",
+                "responses": {
+                    "200": {
+                        "description": "The data"
+                    }
+                }
+            }
+        },
+        "/api/v1/login": {
+            "post": {
+                "tags": [
+                    "Authentication"
+                ],
+                "summary": "Get a autentication user token",
+                "description": "This endpoints return a  all Books Registed",
+                "operationId": "f1b623d35d961c5cd1ba12945403415a",
+                "responses": {
+                    "200": {
+                        "description": "The data"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "bearerToken": {
+                "type": "http",
+                "description": "Acess token obtido na autenticação",
+                "name": "Authorization",
+                "in": "header",
+                "bearerFormat": "JWT",
+                "scheme": "bearer"
+            }
+        }
+    }
+}

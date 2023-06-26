@@ -10,7 +10,7 @@ use App\Models\User;
 use Laravel\Passport\Passport;
 
 
-class BookTest extends TestCase
+class AuthorTest extends TestCase
 {
     use DatabaseTransactions;
     /**
@@ -33,10 +33,10 @@ class BookTest extends TestCase
 
     }
     
-    public function test_user_not_auth_can_view_specifique_book()
+    public function test_user_not_auth_can_view_specifique_auhor()
     {
     
-        $response = $this->json('GET', '/api/v1/books/1');
+        $response = $this->json('GET', '/api/v1/authors/1');
 
         $response->assertStatus(401);
 
