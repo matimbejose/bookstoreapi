@@ -13,7 +13,7 @@ class Author extends Model
     protected $fillable  = ['name'];
 
 
-    //i do not show this
+    //I do not show this
     protected $hidden = [
         'laravel_through_key',
         'created_at',

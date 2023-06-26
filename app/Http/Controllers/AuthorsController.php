@@ -16,18 +16,25 @@ class AuthorsController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    /**
-     * @OA\Get(
-     * tags={"Crud author"},
-     * summary="Get all the authors in the database",
-     * description="This endpoints return a  all authors Registed",
-     *     path="/api/v1/authors",
-     *     @OA\Response(
-     *         response="200",
-     *         description="The data"
-     *     )
-     * )
-     */
+ /**
+ * @OA\Get(
+ *     path="/api/authors",
+ *     summary="Get all authors",
+ *     description="Retrieves a list of all authors",
+ *     tags={"Authors"},
+ *     @OA\Response(
+ *         response=200,
+ *         description="List of authors retrieved successfully",
+ *         @OA\JsonContent(
+ *             type="array",
+ *             @OA\Items(
+ *                 @OA\Property(property="id", type="integer", example="1"),
+ *                 @OA\Property(property="name", type="string", example="John Doe")
+ *             )
+ *         )
+ *     )
+ * )
+ */
 
     public function index()
     {
@@ -51,50 +58,41 @@ class AuthorsController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    /**
-     * @OA\Get(
-     * tags={"Crud author"},
-     * summary="Get the data of a specific author",
-     * description="This endpoints return data of the author",
-     *     path="/api/v1/authors/{name}",
-     *     @OA\Response(
-     *         response="200",
-     *         description="The data"
-     *     )
-     * )
-     */
-    public function store(AuthorsRequest $request)
-    {
-        // $fake = \Faker\Factory::create(1);
-
-
-        $author = Author::create([
-            'name' => $request->name
-        ]);
-
-        return new AuthorsResource($author);
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Author  $author
-     * @return \Illuminate\Http\Response
-     */
-    
-    /**
-     * @OA\Get(
-     * tags={"Crud author"},
-     * summary="Get the data of a specific author",
-     * description="This endpoints return data of the author",
-     *     path="/api/v1/authors/{id}",
-     *     @OA\Response(
-     *         response="200",
-     *         description="The data"
-     *     )
-     * )
-     */
-
+/**
+ * @OA\Get(
+ *     path="/api/authors/{author}",
+ *     summary="Get author details",
+ *     description="Retrieves the details of a specific author",
+ *     tags={"Authors"},
+ *     @OA\Parameter(
+ *         name="author",
+ *         in="path",
+ *         description="ID of the author",
+ *         required=true,
+ *         @OA\Schema(
+ *             type="integer",
+ *             format="int64"
+ *         )
+ *     ),
+ *     @OA\Response(
+ *         response=200,
+ *         description="Author details retrieved successfully",
+ *         @OA\JsonContent(
+ *             @OA\Property(property="data", type="object",
+ *                 @OA\Property(property="id", type="integer", example="1"),
+ *                 @OA\Property(property="name", type="string", example="John Doe")
+ *             )
+ *         )
+ *     ),
+ *     @OA\Response(
+ *         response=404,
+ *         description="Author not found",
+ *         @OA\JsonContent(
+ *             @OA\Property(property="message", type="string", example="Author not found.")
+ *         )
+ *     )
+ * )
+ */
     public function show(Author $author)
     {
 

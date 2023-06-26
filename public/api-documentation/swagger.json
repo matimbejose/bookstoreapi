@@ -8,62 +8,170 @@
         "version": "1.0"
     },
     "paths": {
-        "/api/v1/authors": {
+        "/api/authors": {
             "get": {
                 "tags": [
-                    "Crud author"
+                    "Authors"
                 ],
-                "summary": "Get all the authors in the database",
-                "description": "This endpoints return a  all authors Registed",
-                "operationId": "0de2b82410c4f111fee4cef39a591326",
+                "summary": "Get all authors",
+                "description": "Retrieves a list of all authors",
+                "operationId": "9ad0f97a6c81c309c7045e6c2c886a11",
                 "responses": {
                     "200": {
-                        "description": "The data"
+                        "description": "List of authors retrieved successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "id": {
+                                                "type": "integer",
+                                                "example": "1"
+                                            },
+                                            "name": {
+                                                "type": "string",
+                                                "example": "John Doe"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
         },
-        "/api/v1/authors/{name}": {
+        "/api/authors/{author}": {
             "get": {
                 "tags": [
-                    "Crud author"
+                    "Authors"
                 ],
-                "summary": "Get the data of a specific author",
-                "description": "This endpoints return data of the author",
-                "operationId": "e62d36fa566aaec65d2fe30d3065d733",
+                "summary": "Get author details",
+                "description": "Retrieves the details of a specific author",
+                "operationId": "71ae1d6f67938339d385a69bad636c73",
+                "parameters": [
+                    {
+                        "name": "author",
+                        "in": "path",
+                        "description": "ID of the author",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
                 "responses": {
                     "200": {
-                        "description": "The data"
+                        "description": "Author details retrieved successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer",
+                                                    "example": "1"
+                                                },
+                                                "name": {
+                                                    "type": "string",
+                                                    "example": "John Doe"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Author not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Author not found."
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
                     }
                 }
             }
         },
-        "/api/v1/authors/{id}": {
-            "get": {
-                "tags": [
-                    "Crud author"
-                ],
-                "summary": "Get the data of a specific author",
-                "description": "This endpoints return data of the author",
-                "operationId": "06bc2f56fd9b04ffc872cb6551b7da7f",
-                "responses": {
-                    "200": {
-                        "description": "The data"
-                    }
-                }
-            }
-        },
-        "/api/v1/login": {
+        "/api/login": {
             "post": {
                 "tags": [
                     "Authentication"
                 ],
-                "summary": "Get a autentication user token",
-                "description": "This endpoints return a  all Books Registed",
-                "operationId": "f1b623d35d961c5cd1ba12945403415a",
+                "summary": "User login",
+                "description": "Logs in a user with email and password",
+                "operationId": "be37a6d4fc7c93bf7bf2806f0c8d0bdc",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "email": {
+                                        "type": "string",
+                                        "example": "user@example.com"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "example": "password123"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
                 "responses": {
                     "200": {
-                        "description": "The data"
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "token": {
+                                            "type": "string",
+                                            "example": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9..."
+                                        },
+                                        "name": {
+                                            "type": "string",
+                                            "example": "John Doe"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorised",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "type": "string",
+                                            "example": "Unauthorised"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
                     }
                 }
             }

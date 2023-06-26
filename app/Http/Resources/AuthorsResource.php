@@ -12,6 +12,8 @@ class AuthorsResource extends JsonResource
      * @param  \Illuminate\Http\Request  $request
      * @return array|\Illuminate\Contracts\Support\Arrayable|\JsonSerializable
      */
+
+     //return data of the auhor 
     public function toArray($request)
     {
         return [

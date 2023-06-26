@@ -12,6 +12,8 @@ class BooksResource extends JsonResource
      * @param  \Illuminate\Http\Request  $request
      * @return array|\Illuminate\Contracts\Support\Arrayable|\JsonSerializable
      */
+
+    //  return data of the book 
     public function toArray($request)
     {
         return [
