@@ -1,23 +1,23 @@
 ## API BOOSTORE
-A RESTFUL API THAT SIMULATES A SYSTEM FOR A LIVING WHERE THE RESPONSIBLE OF THE BOOKSTORE CREATE RECORDS OF BOOKS AND AUTHORS AND MAKE A RELATION BETWEEN THEM.
+A restful api that simulates a system for a living where the responsible of the bookstore create records of books and authors and make a relation between them.
 
 
 ## PROJECT DESCRIPTION
-AS A WAY TO APPLY MY KNOWLEDGE IN BACK-END DEVELOPMENT I DECIDED TO CREATE THIS APPLICATION, IT WILL ALSO SERVE AS A FORM OF EXPIRATION FOR FUTURE APPLICATIONS.
+As a way to apply my knowledge in back-end development i decided to create this application, it will also serve as a form of expiration for future applications.
 
 
 ## FUNCTIONALITIES
-- LOG IN USER
-- CREATION OF RECORDS
-- LIST OF RECORDS
+- Login user
+- Creation of records
+- List of records
 
 
 ## TECHNOLOGIES USED
-- DOCKER
-- LARAVEL 8
-- LARAVEL PASSPORT (GERETE JWT ACESS TOKEN)
-- PHP UNIT (UNIT TEST)
-- OPENAPI/SWAGGER (DOCUMENTION API)
+- Docker
+- Laravel 8
+- Laravel passport (gerete jwt acess token)
+- Php unit (unit test)
+- Openapi/swagger (documention api)
 
 
 ## INITIALIZATION
@@ -47,6 +47,6 @@ AS A WAY TO APPLY MY KNOWLEDGE IN BACK-END DEVELOPMENT I DECIDED TO CREATE THIS 
 
 
 ## IMPORTANT
-- TO ACCESS THE API AFTER CONFIGURING THE VIRTUAL HOST: `http://api.com:8989/api/v1`
-- ACCESS THE API DOCUMENTATION TO TEST ENDPOINTS WITH SWAGGER: `http://api.com:8989//api-documentation/index.html#/`
-- FOR TEST THIS API WICH POSTMAN CLIENT: `https://api.postman.com/collections/27788691-71acb703-029e-4d0a-a74c-d88673a586f0?access_key=PMAT-01H3SHYJ0F4C576CCQPXX7F7JV`
+- To access the api after configuring the virtual host: `http://api.com:8989/api/v1`
+- Access the api documentation to test endpoints with swagger: `http://api.com:8989//api-documentation/index.html#/`
+- For test this api wich postman client: `https://api.postman.com/collections/27788691-71acb703-029e-4d0a-a74c-d88673a586f0?access_key=PMAT-01H3SHYJ0F4C576CCQPXX7F7JV`
