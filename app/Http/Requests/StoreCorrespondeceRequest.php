@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreAuthorRequest extends FormRequest
+class StoreCorrespondeceRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,9 +13,6 @@ class StoreAuthorRequest extends FormRequest
      */
     public function authorize()
     {
-
-        // return auth();
-        
         return true;
     }
 
@@ -27,7 +24,15 @@ class StoreAuthorRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'year' => 'required',
+            'reference_number' => 'required',
+            'provenance' => 'required',
+            'classification_code' => 'required',
+            'doc_date' => 'required',
+            'subject' => 'required',
+            'forwarded_to' => 'required',
+            'dispatch' => 'required',
+            'observition' => 'required',
         ];
     }
 }
