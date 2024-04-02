@@ -1,9 +1,10 @@
 <?php
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CorrespondeceController;
 use App\Http\Controllers\ProtocolInternalExternalController;
-
+use App\Http\Controllers\UsersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +19,17 @@ use App\Http\Controllers\ProtocolInternalExternalController;
 
 
 
-Route::resource('correspondences', CorrespondeceController::class);
-Route::resource('protocol-internal-externals', ProtocolInternalExternalController::class);
+Route::post('/register',  [UsersController::class, 'store']);
+Route::post('/login',  [UsersController::class, 'login']);
+
+
+
+Route::middleware('auth:api')->group(function () {
+    Route::get('/user', function (Request $request) {
+        return $request->user();
+    });
+    Route::resource('correspondences', CorrespondeceController::class);
+    Route::resource('protocol-internal-externals', ProtocolInternalExternalController::class);
+});
 
 
