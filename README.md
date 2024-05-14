@@ -21,29 +21,19 @@ As a way to apply my knowledge in back-end development i decided to create this 
 
 
 ## INITIALIZATION
-- 1-CLONE THE PROJECT.
+- 1-clone the project.
+- 2-enter the project folder.
+- 3-rename the file .env.example to .env
+- 4-upload the project container. : `docker-compose up -d`
+- 5-enter inside the container app: `docker commpose exec app bash`
+- 6-download the project dependencies: `composer install`
+- 7-generate the project key: `php artisan key:generate`
+- 8-run the migrations and seed of the project: `php artisan migrate`
+- 9-install passport: `php artisan passport:install`
+- 10-start tinker: `php artisan tinker`
+- 11-create a user just for test: `db::table('users')->insert(['name' => 'matimbe jose' , 'email'=> 'jose.matimbe@uem.ac.mz', 'password'=> hash ::make('1234')]);`
+- 12-configure a virtual host(optional, helps in the process of testing the api): `http://api.com`
 
-- 2-ENTER THE PROJECT FOLDER.
-
-- 3-RENAME THE FILE .ENV.EXAMPLE TO .ENV
-
-- 4-UPLOAD THE PROJECT CONTAINER. : `docker-compose up -d`
-
-- 5-ENTER INSIDE THE CONTAINER APP: `docker commpose exec app bash`
-
-- 6-DOWNLOAD THE PROJECT DEPENDENCIES: `composer install`
-
-- 7-GENERATE THE PROJECT KEY: `php artisan key:generate`
-
-- 8-RUN THE MIGRATIONS AND SEED OF THE PROJECT: `php artisan migrate`
-
-- 9-INSTALL PASSPORT: `php artisan passport:install`
-
-- 10-START TINKER: `php artisan tinker`
-
-- 11-CREATE A USER JUST FOR TEST: `DB::table('users')->insert(['name' => 'Matimbe jose' , 'email'=> 'jose@gmail.com', 'password'=> Hash ::make('1234')]);`
-
-- 12-CONFIGURE A VIRTUAL HOST(OPTIONAL, HELPS IN THE PROCESS OF TESTING THE API): `http://api.com`
 
 
 ## IMPORTANT

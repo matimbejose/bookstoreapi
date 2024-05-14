@@ -8,11 +8,13 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\TestCase;
 use App\Models\User;
 use Laravel\Passport\Passport;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
 
 class AuthorTest extends TestCase
 {
-    use DatabaseTransactions;
+    use RefreshDatabase;
+    
     /**
      * A basic test example.
      *
