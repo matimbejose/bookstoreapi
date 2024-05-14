@@ -21,32 +21,26 @@ As a way to apply my knowledge in back-end development i decided to create this 
 
 
 ## INITIALIZATION
-- 1-CLONE THE PROJECT.
+1-clone the project.
+2-enter the project folder.
+3-rename the file .env.example to .env
+4-upload the project container. : docker-compose up -d
+5-enter inside the container app: docker commpose exec app bash
+6-download the project dependencies: composer install
+7-generate the project key: php artisan key:generate
+8-run the migrations and seed of the project: php artisan migrate
+9-install passport: php artisan passport:install
+10-start tinker: php artisan tinker
+11-create a user just for test: DB::table('users')->insert(['name' => 'Matimbe jose' , 'email'=> 'jose@gmail.com', 'password'=> Hash ::make('1234')]);
+12-configure a virtual host(optional, helps in the process of testing the api): http://api.com
 
-- 2-ENTER THE PROJECT FOLDER.
 
-- 3-RENAME THE FILE .ENV.EXAMPLE TO .ENV
+## Unit test
+1- php artisan test --filter test_user_not_auth_can_view_specifique_auhor
 
-- 4-UPLOAD THE PROJECT CONTAINER. : `docker-compose up -d`
-
-- 5-ENTER INSIDE THE CONTAINER APP: `docker commpose exec app bash`
-
-- 6-DOWNLOAD THE PROJECT DEPENDENCIES: `composer install`
-
-- 7-GENERATE THE PROJECT KEY: `php artisan key:generate`
-
-- 8-RUN THE MIGRATIONS AND SEED OF THE PROJECT: `php artisan migrate`
-
-- 9-INSTALL PASSPORT: `php artisan passport:install`
-
-- 10-START TINKER: `php artisan tinker`
-
-- 11-CREATE A USER JUST FOR TEST: `DB::table('users')->insert(['name' => 'Matimbe jose' , 'email'=> 'jose@gmail.com', 'password'=> Hash ::make('1234')]);`
-
-- 12-CONFIGURE A VIRTUAL HOST(OPTIONAL, HELPS IN THE PROCESS OF TESTING THE API): `http://api.com`
 
 
 ## IMPORTANT
-- To access the api after configuring the virtual host: `http://api.com:8989/api/v1`
-- Access the api documentation to test endpoints with swagger: `http://api.com:8989//api-documentation/index.html#/`
-- For test this api wich postman client: `https://api.postman.com/collections/27788691-71acb703-029e-4d0a-a74c-d88673a586f0?access_key=PMAT-01H3SHYJ0F4C576CCQPXX7F7JV`
+- To access the api after configuring the virtual host: http://api.com:8989/api/v1
+- Access the api documentation to test endpoints with swagger: http://api.com:8989//api-documentation/index.html#/
+- For test this api wich postman client: https://api.postman.com/collections/27788691-71acb703-029e-4d0a-a74c-d88673a586f0?access_key=PMAT-01H3SHYJ0F4C576CCQPXX7F7JV

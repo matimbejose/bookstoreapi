@@ -33,6 +33,8 @@ class AuthorTest extends TestCase
 
     }
     
+
+    //securing the route
     public function test_user_not_auth_can_view_specifique_auhor()
     {
     
