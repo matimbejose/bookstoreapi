@@ -51,9 +51,12 @@ return [
             'database' => env('DB_DATABASE', 'forge'),
             'username' => env('DB_USERNAME', 'forge'),
             'password' => env('DB_PASSWORD', ''),
+<<<<<<< HEAD
             'unix_socket' => env('DB_SOCKET', ''),
             // 'charset' => 'utf8mb4',
             // 'collation' => 'utf8mb4_unicode_ci',
+=======
+>>>>>>> 8096164b2b397d11160ca6bb97364b5efc38789d
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix' => '',

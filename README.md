@@ -1,7 +1,10 @@
-## API BOOSTORE
-A restful api that simulates a system for a living where the responsible of the bookstore create records of books and authors and make a relation between them.
+## Instalation
+1-composer install
+2-php migrate:fresh
+3-php artisan passport:install
 
 
+<<<<<<< HEAD
 ## PROJECT DESCRIPTION
 As a way to apply my knowledge in back-end development i decided to create this application, it will also serve as a form of expiration for future applications.
 
@@ -44,3 +47,7 @@ As a way to apply my knowledge in back-end development i decided to create this 
 - To access the api after configuring the virtual host: http://api.com:8989/api/v1
 - Access the api documentation to test endpoints with swagger: http://api.com:8989//api-documentation/index.html#/
 - For test this api wich postman client: https://api.postman.com/collections/27788691-71acb703-029e-4d0a-a74c-d88673a586f0?access_key=PMAT-01H3SHYJ0F4C576CCQPXX7F7JV
+=======
+## run
+php artisan serve
+>>>>>>> 8096164b2b397d11160ca6bb97364b5efc38789d
